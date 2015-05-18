@@ -1,0 +1,16 @@
+!!! 5
+%html
+
+  %head
+    %meta{:charset => "utf-8"}
+    %link{:rel => "stylesheet", :type => "text/css", :href => "/stylesheets/app.css"}
+
+  %body
+
+    %section#content
+      = yield
+
+    %footer     
+      Lyrics from 
+      %a{:href => "http://metrolyrics.com", :title => "Metro Lyrics"} Metro Lyrics
+

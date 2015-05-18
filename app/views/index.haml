@@ -1,0 +1,18 @@
+%h1
+  — Sinatra —
+
+%img{:src => "images/sinatra.jpeg", :alt => "Sinatra icon"}
+  
+/ On n'affiche la liste des paroles que s'il y a effectivement des
+/ paroles dans le tableau @lyrics. 1 item du tableau = 1 titre
+- unless @lyrics.empty?
+  %ul#songlist
+    / Pour chaque titre du tableau @lyrics, on affiche un lien
+    / vers la page /song/titre_de_la_chanson
+    - @lyrics.each do |l|
+      / Le titre est le nom de fichier auquel on enlève les 
+      / 4 derniers caractères
+      - title = File.basename(l)[0..-5]
+      %li
+        %a{:href => "song/#{title.url_encode}"}
+          = title

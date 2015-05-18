@@ -1,0 +1,7 @@
+%a.back{:href => "/", :title => "Home"}
+  %img{:src => "/images/back.png", :alt => "Retour"}
+
+%h1= params[:title].url_decode
+
+%pre
+  = @lyrics
